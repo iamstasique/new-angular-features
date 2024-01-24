@@ -1,0 +1,26 @@
+$dark-color: rgba(0, 0, 0, 0.5);
+
+.navigation {
+    display: flex;
+
+    width: 100%;
+    border-bottom: 1px solid $dark-color;
+    box-sizing: border-box;
+
+    .navigation-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+
+        height: 50px;
+
+        color: $dark-color;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $dark-color;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<nav class="navigation">
+  @for (item of navigationItems; track item) {
+  <a class="navigation-item" [routerLink]="getUrl(item)">
+    {{ item.title | titlecase }}
+  </a>
+  }
+</nav>

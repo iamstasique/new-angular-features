@@ -1,3 +1,32 @@
 import { Routes } from '@angular/router';
+import { NavigationUrls } from './enums/app-urls';
+import { HomeComponent } from './pages/home/home.component';
+import { ProtectedComponent } from './pages/protected/protected.component';
+import { SignalsComponent } from './pages/signals/signals.component';
+import { BuiltInControlFlowComponent } from './pages/built-in-control-flow/built-in-control-flow.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: NavigationUrls.Home,
+    pathMatch: 'full',
+  },
+  {
+    path: NavigationUrls.Home,
+    loadComponent: () => HomeComponent,
+    children: [
+        {
+          path: NavigationUrls.Protected,
+          loadComponent: () => ProtectedComponent,
+        },
+        {
+          path: NavigationUrls.Signals,
+          loadComponent: () => SignalsComponent,
+        },
+        {
+          path: NavigationUrls.BuiltInControlFlow,
+          loadComponent: () => BuiltInControlFlowComponent,
+        },
+    ],
+  },
+];
