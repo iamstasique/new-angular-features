@@ -3,6 +3,7 @@ export enum NavigationUrls {
   Protected = 'protected',
   Signals = 'signals',
   BuiltInControlFlow = 'built-in-control-flow',
+  ServiceInjection = 'service-injection',
 }
 
 export enum NavigationTitles {
@@ -10,6 +11,7 @@ export enum NavigationTitles {
   Protected = 'protected',
   Signals = 'signals',
   BuiltInControlFlow = 'built in control flow',
+  ServiceInjection = 'service injection',
 }
 
 export interface NavigationUrlItem {
@@ -33,5 +35,9 @@ export const NAVIGATION_URL_LIST: NavigationUrlItem[] = [
   {
     url: NavigationUrls.BuiltInControlFlow,
     title: NavigationTitles.BuiltInControlFlow,
+  },
+  {
+    url: NavigationUrls.ServiceInjection,
+    title: NavigationTitles.ServiceInjection,
   },
 ];

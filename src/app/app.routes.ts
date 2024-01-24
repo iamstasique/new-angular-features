@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProtectedComponent } from './pages/protected/protected.component';
 import { SignalsComponent } from './pages/signals/signals.component';
 import { BuiltInControlFlowComponent } from './pages/built-in-control-flow/built-in-control-flow.component';
+import { ServiceInjectionComponent } from './pages/service-injection/service-injection.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +27,10 @@ export const routes: Routes = [
         {
           path: NavigationUrls.BuiltInControlFlow,
           loadComponent: () => BuiltInControlFlowComponent,
+        },
+        {
+          path: NavigationUrls.ServiceInjection,
+          loadComponent: () => ServiceInjectionComponent,
         },
     ],
   },
