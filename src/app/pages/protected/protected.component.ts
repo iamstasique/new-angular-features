@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { ProtectedChildComponent } from './protected-child/protected-child.component';
 
 @Component({
   selector: 'app-protected',
   standalone: true,
-  imports: [],
   templateUrl: './protected.component.html',
-  styleUrl: './protected.component.scss'
+  styleUrl: './protected.component.scss',
+  imports: [ProtectedChildComponent],
 })
-export class ProtectedComponent {
+export class ProtectedComponent implements AfterViewInit {
+  @ViewChild('protectedChild')
+  protectedChild: ProtectedChildComponent;
+
   public publicField: string = 'public';
   private privateField: string = 'private';
   protected protectedField: string = 'protected';
+
+  ngAfterViewInit(): void {
+    console.log('public: ', this.protectedChild.publicField);
+    // console.log('protected: ', this.protectedChild.protectedField);
+    // console.log('private: ', this.protectedChild.privateField);
+  }
 }
