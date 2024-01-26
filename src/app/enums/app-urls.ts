@@ -4,6 +4,7 @@ export enum NavigationUrls {
   Signals = 'signals',
   BuiltInControlFlow = 'built-in-control-flow',
   ServiceInjection = 'service-injection',
+  DateFormats = 'date-formats'
 }
 
 export enum NavigationTitles {
@@ -12,6 +13,7 @@ export enum NavigationTitles {
   Signals = 'signals',
   BuiltInControlFlow = 'built in control flow',
   ServiceInjection = 'service injection',
+  DateFormats = 'date formats'
 }
 
 export interface NavigationUrlItem {
@@ -39,5 +41,9 @@ export const NAVIGATION_URL_LIST: NavigationUrlItem[] = [
   {
     url: NavigationUrls.ServiceInjection,
     title: NavigationTitles.ServiceInjection,
+  },
+  {
+    url: NavigationUrls.DateFormats,
+    title: NavigationTitles.DateFormats,
   },
 ];

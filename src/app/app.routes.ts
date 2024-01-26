@@ -5,6 +5,7 @@ import { ProtectedComponent } from './pages/protected/protected.component';
 import { SignalsComponent } from './pages/signals/signals.component';
 import { BuiltInControlFlowComponent } from './pages/built-in-control-flow/built-in-control-flow.component';
 import { ServiceInjectionComponent } from './pages/service-injection/service-injection.component';
+import { DateFormatsComponent } from './pages/date-formats/date-formats.component';
 
 export const routes: Routes = [
   {
@@ -31,6 +32,10 @@ export const routes: Routes = [
         {
           path: NavigationUrls.ServiceInjection,
           loadComponent: () => ServiceInjectionComponent,
+        },
+        {
+          path: NavigationUrls.DateFormats,
+          loadComponent: () => DateFormatsComponent,
         },
     ],
   },
