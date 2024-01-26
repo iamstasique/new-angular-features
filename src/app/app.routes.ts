@@ -6,6 +6,8 @@ import { SignalsComponent } from './pages/signals/signals.component';
 import { BuiltInControlFlowComponent } from './pages/built-in-control-flow/built-in-control-flow.component';
 import { ServiceInjectionComponent } from './pages/service-injection/service-injection.component';
 import { DateFormatsComponent } from './pages/date-formats/date-formats.component';
+import { inject } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 export const routes: Routes = [
   {
@@ -20,6 +22,7 @@ export const routes: Routes = [
         {
           path: NavigationUrls.Protected,
           loadComponent: () => ProtectedComponent,
+          canActivate: [() => inject(AuthService).isAuthorized()]
         },
         {
           path: NavigationUrls.Signals,
