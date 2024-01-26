@@ -1,1 +1,21 @@
-<p>signals works!</p>
+<section class="container">
+  <div class="container-list">
+    @for (name of names; track name) {
+    <div class="container-list-item" (click)="onSelectName(name)">
+      {{ name }}
+    </div>
+    }
+  </div>
+
+  <div class="container-list">
+    @for (age of ages; track age) {
+    <div class="container-list-item" (click)="onSelectAge(age)">{{ age }}</div>
+    }
+  </div>
+
+  <div class="container-person">
+    {{ currentPerson() | json }}
+  </div>
+
+  <button class="update-button" (click)='onUpdateUserDataToRandom()'>{{ "Update user data to random" | titlecase }}</button>
+</section>
