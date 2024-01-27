@@ -8,6 +8,7 @@ import { ServiceInjectionComponent } from './pages/service-injection/service-inj
 import { DateFormatsComponent } from './pages/date-formats/date-formats.component';
 import { inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { TakeUntilDestroyedComponent } from './pages/take-until-destroyed/take-until-destroyed.component';
 
 export const routes: Routes = [
   {
@@ -19,27 +20,31 @@ export const routes: Routes = [
     path: NavigationUrls.Home,
     loadComponent: () => HomeComponent,
     children: [
-        {
-          path: NavigationUrls.Protected,
-          loadComponent: () => ProtectedComponent,
-          canActivate: [() => inject(AuthService).isAuthorized()]
-        },
-        {
-          path: NavigationUrls.Signals,
-          loadComponent: () => SignalsComponent,
-        },
-        {
-          path: NavigationUrls.BuiltInControlFlow,
-          loadComponent: () => BuiltInControlFlowComponent,
-        },
-        {
-          path: NavigationUrls.ServiceInjection,
-          loadComponent: () => ServiceInjectionComponent,
-        },
-        {
-          path: NavigationUrls.DateFormats,
-          loadComponent: () => DateFormatsComponent,
-        },
+      {
+        path: NavigationUrls.Protected,
+        loadComponent: () => ProtectedComponent,
+        canActivate: [() => inject(AuthService).isAuthorized()],
+      },
+      {
+        path: NavigationUrls.Signals,
+        loadComponent: () => SignalsComponent,
+      },
+      {
+        path: NavigationUrls.BuiltInControlFlow,
+        loadComponent: () => BuiltInControlFlowComponent,
+      },
+      {
+        path: NavigationUrls.ServiceInjection,
+        loadComponent: () => ServiceInjectionComponent,
+      },
+      {
+        path: NavigationUrls.DateFormats,
+        loadComponent: () => DateFormatsComponent,
+      },
+      {
+        path: NavigationUrls.TakeUntilDestroyed,
+        loadComponent: () => TakeUntilDestroyedComponent,
+      },
     ],
   },
 ];
