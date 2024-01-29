@@ -23,6 +23,7 @@ export const routes: Routes = [
       {
         path: NavigationUrls.Protected,
         loadComponent: () => ProtectedComponent,
+        resolve: { dateFromRouter: () => new Date() },
         canActivate: [() => inject(AuthService).isAuthorized()],
       },
       {

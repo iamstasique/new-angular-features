@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { ProtectedChildComponent } from './protected-child/protected-child.component';
 
 @Component({
@@ -9,6 +9,8 @@ import { ProtectedChildComponent } from './protected-child/protected-child.compo
   imports: [ProtectedChildComponent],
 })
 export class ProtectedComponent implements AfterViewInit {
+  @Input() dateFromRouter: string;
+
   @ViewChild('protectedChild')
   protectedChild: ProtectedChildComponent;
 
