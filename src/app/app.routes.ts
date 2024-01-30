@@ -9,6 +9,8 @@ import { DateFormatsComponent } from './pages/date-formats/date-formats.componen
 import { inject } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { TakeUntilDestroyedComponent } from './pages/take-until-destroyed/take-until-destroyed.component';
+import { InputParentComponent } from './pages/input-parent/input-parent.component';
+import { InputChildComponent } from './pages/input-parent/components/input-child/input-child.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +25,6 @@ export const routes: Routes = [
       {
         path: NavigationUrls.Protected,
         loadComponent: () => ProtectedComponent,
-        resolve: { dateFromRouter: () => new Date() },
         canActivate: [() => inject(AuthService).isAuthorized()],
       },
       {
@@ -45,6 +46,15 @@ export const routes: Routes = [
       {
         path: NavigationUrls.TakeUntilDestroyed,
         loadComponent: () => TakeUntilDestroyedComponent,
+      },
+      {
+        path: NavigationUrls.ParentInput,
+        loadComponent: () => InputParentComponent,
+      },
+      {
+        path: NavigationUrls.ChildInput,
+        loadComponent: () => InputChildComponent,
+        resolve: { currentUser: () => inject(AuthService).currentUser$ },
       },
     ],
   },

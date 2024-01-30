@@ -1,7 +1,5 @@
 <h1>Protected fields</h1>
 
-<span>Date from router - <i>{{ dateFromRouter }}</i></span>
-
 <ul>
   <li>{{ publicField }}</li>
   <!-- <li>{{ privateField }}</li> -->
@@ -9,10 +7,7 @@
 </ul>
 
 <!-- Up to Angular 16 -->
-<app-protected-child
-  [requiredTitle]="'title'"
-  #protectedChild
-></app-protected-child>
+<app-protected-child #protectedChild></app-protected-child>
 
 <!-- In Angular 16 -->
-<app-protected-child [requiredTitle]="'title'" #protectedChild />
+<app-protected-child #protectedChild />

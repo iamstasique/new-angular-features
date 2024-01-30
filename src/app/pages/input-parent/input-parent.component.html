@@ -1,0 +1,12 @@
+<div class="parent" style='position: relative;'>
+  <span style='position: absolute; top: 30px;'>
+    parent
+  </span>
+  <app-input-child
+    [currentUser]="currentUser$ | async"
+    [requiredInput]="'required text'"
+    [title]="'title from parent'"
+    showDate
+    class="child"
+  />
+</div>

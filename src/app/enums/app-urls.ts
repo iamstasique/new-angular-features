@@ -6,6 +6,8 @@ export enum NavigationUrls {
   ServiceInjection = 'service-injection',
   DateFormats = 'date-formats',
   TakeUntilDestroyed = 'take-until-destroyed',
+  ParentInput = 'parent-inputs',
+  ChildInput = 'child-inputs',
 }
 
 export enum NavigationTitles {
@@ -16,6 +18,8 @@ export enum NavigationTitles {
   ServiceInjection = 'service injection',
   DateFormats = 'date formats',
   TakeUntilDestroyed = 'take until destroyed',
+  ParentInput = 'parent inputs',
+  ChildInput = 'child inputs',
 }
 
 export interface NavigationUrlItem {
@@ -51,5 +55,13 @@ export const NAVIGATION_URL_LIST: NavigationUrlItem[] = [
   {
     url: NavigationUrls.TakeUntilDestroyed,
     title: NavigationTitles.TakeUntilDestroyed,
+  },
+  {
+    url: NavigationUrls.ParentInput,
+    title: NavigationTitles.ParentInput,
+  },
+  {
+    url: NavigationUrls.ChildInput,
+    title: NavigationTitles.ChildInput,
   },
 ];

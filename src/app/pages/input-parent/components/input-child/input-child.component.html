@@ -1,0 +1,11 @@
+<div class="child">
+  <p>
+    title is <i>{{ aliasTitle }}</i>
+  </p>
+  
+  @if(showDate) {
+  <p>date is {{ currentDate | date }}</p>
+  }
+
+  <p>current user is {{ currentUser | json }}</p>
+</div>
