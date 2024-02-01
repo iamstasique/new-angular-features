@@ -17,5 +17,33 @@
     {{ currentPerson() | json }}
   </div>
 
-  <button class="update-button" (click)='onUpdateUserDataToRandom()'>{{ "Update user data to random" | titlecase }}</button>
+  <button class="update-button" (click)="onUpdateUserDataToRandom()">
+    {{ "Update user data to random" | titlecase }}
+  </button>
+
+  <div class="counter">
+    value - {{ counter() }}
+    <button (click)="onIncrementCounter()">+</button>
+  </div>
+
+  <div class="initial-observable-list">
+    <p>observable list</p>
+    @for (item of initialObservableList$ | async; track item) {
+    {{ item }}
+    }
+  </div>
+
+  <div class="signal-list">
+    <p>signal list from observable using <i>toSIgnal</i></p>
+    @for (item of signalListFromIbservable(); track item) {
+    {{ item }}
+    }
+  </div>
+
+  <div class="observable-list">
+    <p>observable list from signal</p>
+    @for (item of observableListFromSignal$ | async; track item) {
+    {{ item }}
+    }
+  </div>
 </section>
