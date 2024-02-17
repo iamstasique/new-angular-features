@@ -1,0 +1,13 @@
+<!-- Angular 17 -->
+@switch (age) {
+  @case (60) {<p>You're very old</p>}
+  @case (18) {<p>You're very young</p>}
+  @default {<p>You're an adult</p>}
+}
+
+<!-- Angular 16 and below -->
+<ng-container [ngSwitch]='age'>
+    <p *ngSwitchCase='60'>You're very old</p>
+    <p *ngSwitchCase='18'>You're very young</p>
+    <p *ngSwitchDefault>You're an adult</p>
+</ng-container>

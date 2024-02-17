@@ -8,6 +8,10 @@ export enum NavigationUrls {
   TakeUntilDestroyed = 'take-until-destroyed',
   ParentInput = 'parent-inputs',
   ChildInput = 'child-inputs',
+  For = 'for',
+  If = 'if',
+  Switch = 'switch',
+  Defer = 'defer',
 }
 
 export enum NavigationTitles {
@@ -20,6 +24,10 @@ export enum NavigationTitles {
   TakeUntilDestroyed = 'take until destroyed',
   ParentInput = 'parent inputs',
   ChildInput = 'child inputs',
+  For = 'for',
+  If = 'if',
+  Switch = 'switch',
+  Defer = 'defer',
 }
 
 export interface NavigationUrlItem {

@@ -1,0 +1,26 @@
+<h1>For</h1>
+<button (click)="onSort()">Sort</button>
+
+<div class="people-list">
+  <!--Angular 17-->
+  @for (person of people; track person.id) {
+  <div class="person">
+    <p>id: {{ person.id }}</p>
+    <p>name: {{ person.name }}</p>
+    <p>email: {{ person.email }}</p>
+    <p>password: {{ person.password }}</p>
+  </div>
+  } @empty {
+  <span>list is empty</span>
+  }
+</div>
+
+<div *ngIf="people.length; else emptyList" class="people-list">
+  <!--Before Angular 17-->
+  <!-- <div *ngFor="let person of people" class="person">
+    <span>{{ person | json }}</span>
+  </div> -->
+</div>
+
+<ng-template #emptyList>list is empty</ng-template>
+

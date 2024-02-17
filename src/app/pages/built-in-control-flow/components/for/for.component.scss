@@ -1,0 +1,29 @@
+.people-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .person {
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 12px;
+        box-sizing: border-box;
+
+        width: 200px;
+
+        position: relative;
+
+        .remove {
+            border: 1px solid black;
+            box-sizing: border-box;
+            border-radius: 50%;
+
+            height: 30px;
+            width: 30px;
+
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+        }
+    }
+}

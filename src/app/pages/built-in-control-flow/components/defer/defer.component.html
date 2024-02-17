@@ -1,0 +1,40 @@
+{{counter}}
+<button (click)="counter = counter + 1">increase</button>
+
+@defer (on viewport) {
+    <p>content (on viewport)</p>
+} @loading {
+    <p>Loading...</p>
+} @error {
+    <p>Loading failed</p>
+} @placeholder {
+    <p>placeholder</p>
+}
+
+@defer (on idle) {
+    <p>content (on idle)</p>
+}
+
+@defer (on immediate) {
+    <p>content (on immediate)</p>
+}
+
+@defer (on timer(3000)) {
+    <p>content (on timer(3000))</p>
+}
+
+@defer (on interaction) {
+    <p>content (on interaction)</p>
+} @placeholder {
+    <p>placeholder (on interaction)</p>
+}
+
+@defer (on hover) {
+    <p>content (on hover)</p>
+} @placeholder {
+    <p>placeholder (on hover)</p>
+}
+
+@defer (when counter > 5) {
+    <p>content (when)</p>
+}

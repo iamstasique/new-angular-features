@@ -1,1 +1,10 @@
-<p>built-in-control-flow works!</p>
+<h1>Built in control flow</h1>
+<nav class="navigation-list">
+  @for (item of navigationItems; track item) {
+  <a class="navigation-list-item" [routerLink]="item">
+    {{ item | titlecase }}
+  </a>
+  }
+</nav>
+
+<router-outlet />

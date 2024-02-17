@@ -11,6 +11,10 @@ import { AuthService } from './services/auth.service';
 import { TakeUntilDestroyedComponent } from './pages/take-until-destroyed/take-until-destroyed.component';
 import { InputParentComponent } from './pages/input-parent/input-parent.component';
 import { InputChildComponent } from './pages/input-parent/components/input-child/input-child.component';
+import { ForComponent } from './pages/built-in-control-flow/components/for/for.component';
+import { IfComponent } from './pages/built-in-control-flow/components/if/if.component';
+import { SwitchComponent } from './pages/built-in-control-flow/components/switch/switch.component';
+import { DeferComponent } from './pages/built-in-control-flow/components/defer/defer.component';
 
 export const routes: Routes = [
   {
@@ -34,6 +38,24 @@ export const routes: Routes = [
       {
         path: NavigationUrls.BuiltInControlFlow,
         loadComponent: () => BuiltInControlFlowComponent,
+        children: [
+          {
+            path: NavigationUrls.For,
+            loadComponent: () => ForComponent,
+          },
+          {
+            path: NavigationUrls.If,
+            loadComponent: () => IfComponent,
+          },
+          {
+            path: NavigationUrls.Switch,
+            loadComponent: () => SwitchComponent,
+          },
+          {
+            path: NavigationUrls.Defer,
+            loadComponent: () => DeferComponent,
+          },
+        ],
       },
       {
         path: NavigationUrls.ServiceInjection,

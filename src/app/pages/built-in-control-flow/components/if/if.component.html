@@ -1,0 +1,21 @@
+<h1>If</h1>
+
+<!-- Angular 17 -->
+@if (age < 18) {
+<p>You're very young</p>
+} @else if(age > 60) {
+<p>You're very old</p>
+} @else {
+<p>you are an adult</p>
+}
+
+<!-- Angular 16 and below -->
+<p *ngIf="age < 18; else notYoung">You're very young</p>
+
+<ng-template #notYoung>
+  <p *ngIf="age > 60; else adult">You're very old</p>
+</ng-template>
+
+<ng-template #adult>
+  <p>you are an adult</p>
+</ng-template>
