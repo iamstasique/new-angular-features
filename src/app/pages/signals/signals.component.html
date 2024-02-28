@@ -13,8 +13,12 @@
     }
   </div>
 
-  <div class="container-person">
+  <div class="container-person" style='border-bottom: 3px solid red;'>
     {{ currentPerson() | json }}
+  </div>
+
+  <div class="container-age-category" style='border-bottom: 3px solid red;'>
+    {{ ageCategory() }}
   </div>
 
   <button class="update-button" (click)="onUpdateUserDataToRandom()">

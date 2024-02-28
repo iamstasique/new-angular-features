@@ -15,6 +15,11 @@ interface Person {
   age: number;
 }
 
+enum AgeCategory {
+  Young = 'young',
+  Adult = 'adult',
+}
+
 @Component({
   selector: 'app-signals',
   standalone: true,
@@ -39,6 +44,10 @@ export class SignalsComponent {
     age: this.selectedAge(),
   }));
 
+  ageCategory: Signal<AgeCategory> = computed(() => 
+    this.selectedAge() > 18 ? AgeCategory.Adult : AgeCategory.Young
+  );
+
   counter: WritableSignal<number> = signal(0);
 
   initialObservableList$: Observable<number[]> = of([1, 2, 3, 4, 5, 6]);
@@ -47,6 +56,7 @@ export class SignalsComponent {
 
   private selectedName: WritableSignal<string> = signal(this.names[0]);
   private selectedAge: WritableSignal<number> = signal(this.ages[0], { equal: (a, b) => false });
+  private readonlySignal: Signal<void> = signal(null).asReadonly();
 
   constructor() {
     effect(() => console.log(`[Effect] Selected name: ${this.selectedName()}`));
